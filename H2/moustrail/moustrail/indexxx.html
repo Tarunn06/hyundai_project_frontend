@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Trail Effect</title>
+</head>
+<body>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          position: relative;
+
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .trail{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #1829e2;
+            background: #1829e2;
+            position: fixed;
+            animation: come 1s linear forwards;
+        }
+        @keyframes come{
+            0%{
+                transform: scale(0);
+            }
+            10%{
+                transform: scale(1) translateY(0px);
+                opacity: 1;
+            }
+            100%{
+                transform: scale(0) translateY(150px);
+                opacity: 0;
+            }
+
+        }
+    </style>
+
+    
+</body class="flex">
+<!-- <h1>Mouse trail effect</h1> -->
+<script>
+    var body=document.body;
+
+    document.addEventListener('mousemove',(e)=>{
+        var elem=document.createElement('div');
+        elem.setAttribute('class','trail')
+        elem.setAttribute('style',`left: ${e.clientX - 10}px; top: ${e.clientY - 10}px;`);
+
+        elem.onanimationed=()=>{
+            elem.remove();
+        }
+        body.insertAdjacentElement('beforeend',elem);
+    })
+</script>
+</html>

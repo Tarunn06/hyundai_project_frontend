@@ -1,0 +1,184 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
+    url(3.jpg);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+
+.dialogoverlay{
+
+    margin-top: 8%;
+    margin-left: 10%;
+    background-color: rgb(55, 57, 59);
+    padding: 50px;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    height: 40%;
+  
+  }
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#hammer {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  max-width: 20%;
+  cursor: pointer;
+  z-index: 2; /* Ensure the hammer is above other elements */
+  animation: hammerFloat 1s ease-in alternate; /* Animation for the hammer */
+}
+
+#narrator {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  max-width: 20%;
+  z-index: 2; /* Ensure the narrator is above other elements */
+  transform: translateX(-50px); /* Initial translation for animation */
+  animation: slideInLeft 1s ease-in-out 1s forwards;
+}
+
+/* Style for the message box */
+#message-box {
+ 
+
+  top: 20%;
+  left: 18%;
+  width: 300px;
+  background-color: rgba(174, 175, 177, 0.9);
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 2; /* Ensure the message box is above other elements */
+  opacity: 0; /* Initial opacity for animation */
+  transform: translateY(20px); /* Initial translation for animation */
+  animation: fadeInUp 1s ease-in-out 1s forwards;
+}
+
+.message-text {
+  font-size: 20px;
+  margin: 0;
+  color: rgb(3, 3, 3);
+}
+
+/* Style for the "Next Hurdle" button */
+
+.option {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 4px 4px rgba(23, 162, 184, 0.7); /* Box shadow with the desired color */
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  right: 10%;
+}
+
+.option:hover {
+  color: #17a2b8;
+  transition: 0.6s;
+  background-color: white;
+}
+.option1 {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 4px 4px rgba(23, 162, 184, 0.7); /* Box shadow with the desired color */
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  right: 20%;
+}
+
+.option1:hover {
+  color: #17a2b8;
+  transition: 0.6s;
+  background-color: white;
+}
+/* Keyframe animations */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for the hammer */
+@keyframes hammerFloat {
+  0% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.message-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0);
+  animation: fadeIn 1s ease-in-out 3s forwards,
+    scaleUp 0.5s ease-in-out 3s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.message-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 3s forwards;
+}

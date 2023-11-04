@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Page</title>
+        <!-- Font Awesome for narrator and timer icons -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="hurdle_Ques_Retry.css">
+
+    </head>
+    <body>
+        <style>
+            .message-box {
+                background-color: transparent; /* Remove the white background */
+                border: none; /* Add a border for visibility */
+            }
+        
+            .option {
+                background-color: rgba(0, 0, 0, 0.6); /* Reduce the opacity (adjust as needed) */
+                color: #fff; /* Set text color to white for better visibility */
+            }
+        </style>
+        <!-- Narrator Box -->
+        <div class="narrator-box">
+            <img
+                src="person1.png" 
+                alt="Narrator" width="100%">
+        </div>
+
+        <!-- Welcome Message -->
+        <div class="dialogoverlay">
+            <div class="welcome-message">
+                <b class="text-dark"> Stay determined and resilient</b> you've been granted another opportunity to make the right choice! 
+            </div>
+        </div>
+        <!-- Message Box -->
+        <div class="message-text fw-bold text-dark bg-light my-1 px-5 py-2" >What are the different ways to report a whistle-blower complaint?
+
+        </div>
+        <div class="message-box">
+            <div class="options p-4 row gap-3" style="margin-top: 70px;">
+                <div class="option"
+                    onclick="redirectTo('hurdle_2_wrong.html')">Only through the whistle-blower portal provided in Autoway
+                </div>
+                    <br>
+                <div class="option"
+                    onclick="redirectTo('hurdle_2_wrong.html')">Either by sending a mail (or) complaining in-person to the Domain Head – Audit or the Vertical Head-Audit
+                </div>
+                    <br>
+                <div class="option"
+                    onclick="redirectTo('hurdle 222.html')">Either through the whistle-blower portal provided in Autoway (or) by scanning the QR code placed (or) by sending an e-mail (or) complaining in-person
+                </div>
+                    <br>
+                <div class="option"
+                    onclick="redirectTo('hurdle_2_wrong.html')">Only by sending an e-mail
+                </div>
+                    <br>
+            </div>
+        </div>
+        <!-- 
+        <div class="next-btn1 option ">
+            Retry Game
+        </div>
+        <div class="next-btn option">
+            Next Hurdle
+        </div> -->
+        <script>
+        // Redirect function
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+
+        // Existing code for blinking options
+        const options = document.querySelectorAll('.option');
+        let blinkOn = true;
+
+        setInterval(blink, 500);
+
+        // Infinite counting timer
+        const timerElement = document.querySelector('.timer-box');
+        let timerCount = 1;
+
+        setInterval(() => {
+            timerElement.innerHTML = `<i class="fas fa-stopwatch"></i> ${timerCount}`;
+            timerCount++;
+        }, 1000);
+    </script>
+    </script>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+
+
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .trail{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(8, 212, 243, 1);
+  background: rgba(8, 212, 243, 1)f;
+  position: fixed;
+  animation: come 0.5s linear forwards;
+}
+        @keyframes come{
+            0%{
+                transform: scale(0);
+            }
+            10%{
+                transform: scale(1) translateY(0px);
+                opacity: 1;
+            }
+            100%{
+                transform: scale(0) translateY(150px);
+                opacity: 0;
+            }
+
+        }
+    </style>
+
+    
+</body class="flex">
+<!-- <h1>Mouse trail effect</h1> -->
+<script>
+    var body=document.body;
+
+    document.addEventListener('mousemove',(e)=>{
+        var elem=document.createElement('div');
+        elem.setAttribute('class','trail')
+        elem.setAttribute('style',`left: ${e.clientX - 10}px; top: ${e.clientY - 10}px;`);
+
+        elem.onanimationed=()=>{
+            elem.remove();
+        }
+        body.insertAdjacentElement('beforeend',elem);
+    })
+</script>
+    </body>
+</html>
