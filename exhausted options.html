@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="Unethical_Ques.css">
+    <title>Game Page</title>
+
+  </head>
+  <body>
+    <div id="container">
+      <img src="./person1.png" alt="Narrator" id="narrator" />
+      <!-- Add the message box -->
+      <div class="message-box">
+        <div class>
+          <img style="border-radius: 20px;" height="200"
+            src="https://media.tenor.com/7JdjvXEPjHIAAAAM/ooops-confused.gif"
+            alt>
+        </div>
+      </div>
+
+      <div class="dialogoverlay">
+        <div id="message-box">
+          <p class="message-text">
+            You have exhausted your number of attempts,
+            Now you have 2 options !!
+          </p>
+        </div>
+      </div>
+      <!-- Add the "Next Hurdle" button -->
+
+      <div class="option1">
+        <a href=""
+          class="text-light text-decoration-none"> Exit Game</a>
+      </div>
+      <div class="option">
+        <a href="hammer.html"
+          class="text-light text-decoration-none"> Use Hammer </a>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+      swal({
+        title: "Oops!",
+        text: "You Have Given The  Wrong Answer",
+        icon: "warning",
+      });
+    </script>
+  </body>
+</html>

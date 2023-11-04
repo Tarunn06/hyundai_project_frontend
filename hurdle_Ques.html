@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Page</title>
+        <!-- Font Awesome for narrator and timer icons -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="hurdle_Ques.css">
+    </head>
+    <body>
+        <style>
+            .message-box {
+                background-color: transparent; /* Remove the white background */
+                border: none; /* Add a border for visibility */
+            }
+        
+            .option {
+                background-color: rgb(0, 0, 0); /* Reduce the opacity (adjust as needed) */
+                color: #fff; /* Set text color to white for better visibility */
+            }
+        </style>
+        
+        <!-- Narrator Box -->
+        <div class="narrator-box">
+            <img
+                src="./person1.png"
+                class="img"
+                alt="Narrator" width="100%">
+        </div>
+
+        <!-- Welcome Message -->
+        <div class="dialogoverlay">
+            <div class="welcome-message">
+                <b class="text-dark"> Oh…Looks like they are busy in a meeting. 
+                    While you wait for them answer the question
+                    below.
+            
+            </div>
+        </div>
+
+        <!-- Message Box -->
+        <br>
+        <div class="message-text fw-bold text-dark bg-light my-1 px-5 py-2" style="margin-left: -270px !important;">
+            What are the prerequisites of a complaint to be made in the Whistleblower system?
+        </div>
+        
+        
+        <br>
+        <div class="message-box">
+            <div class="options p-4 row gap-3">
+                <div class="option"
+                    onclick="redirectTo('congrats.html')">Only adequate facts and information to substantiate the complaint is needed.
+
+                </div>
+                    <br>
+                <div class="option"
+                    onclick="redirectTo('hurdle_Ques_retry.html')">Reasons for such make such complaint, should be specified.
+
+                </div>
+                    <br>
+                <div class="option"
+                    onclick="redirectTo('hurdle_Ques_retry.html')">Complaints can be based on hearsay or rumours
+                </div>
+                    <br>
+                <div class="option"
+                    onclick="redirectTo('hurdle_Ques_retry.html')">No prerequisites are needed
+
+                </div>
+            </div>
+        </div>
+        <!-- 
+        <div class="next-btn1 option ">
+            Retry Game
+        </div>
+        <div class="next-btn option">
+            Next Hurdle
+        </div> -->
+        <script>
+        // Redirect function
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+
+        // Existing code for blinking options
+        const options = document.querySelectorAll('.option');
+        let blinkOn = true;
+
+        setInterval(blink, 500);
+
+        // Infinite counting timer
+        const timerElement = document.querySelector('.timer-box');
+        let timerCount = 1;
+
+        setInterval(() => {
+            timerElement.innerHTML = `<i class="fas fa-stopwatch"></i> ${timerCount}`;
+            timerCount++;
+        }, 1000);
+    </script>
+    <script>
+        var body=document.body;
+        
+        document.addEventListener('mousemove',(e)=>{
+          var elem=document.createElement('div');
+          elem.setAttribute('class','trail')
+          elem.setAttribute('style',`left: ${e.clientX - 10}px; top: ${e.clientY - 10}px;`);
+        
+          elem.onanimationed=()=>{
+              elem.remove();
+          }
+          body.insertAdjacentElement('beforeend',elem);
+        })
+        </script>
+    </body>
+</html>
